@@ -207,7 +207,7 @@ console.log("users :", users);
 // console.log(getSortedUniqueSkills(users));
 // // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
-// Решение 10
+// Решение 10 №1
 // const getSortedUniqueSkills = users => {
 //   let resArr = [];
 //   const newArr = users.map(el => (resArr = [...resArr, ...el.skills]));
@@ -216,6 +216,42 @@ console.log("users :", users);
 //     return idx === resArr.indexOf(item);
 //   });
 //   return skillsArr.sort();
+// };
+
+// console.log(getSortedUniqueSkills(users));
+// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+// Решение 10 №2
+// const getSortedUniqueSkills = users => {
+//   const skills = [];
+//   users.forEach(element => {
+//     skills.push(...element.skills);
+//   });
+
+//   const unique = [];
+//   skills.forEach(el => {
+//     !unique.includes(el) && unique.push(el);
+//   });
+
+//   return unique.sort();
+// };
+
+// console.log(getSortedUniqueSkills(users));
+// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+// Решение 10 №3
+// const getSortedUniqueSkills = users => {
+//   const unique = users
+//     .reduce((acc, el) => {
+//       acc.push(...el.skills);
+//       return acc;
+//     }, [])
+//     .reduce((acc, el) => {
+//       !acc.includes(el) && acc.push(el);
+//       return acc;
+//     }, [])
+//     .sort();
+//   return unique;
 // };
 
 // console.log(getSortedUniqueSkills(users));
