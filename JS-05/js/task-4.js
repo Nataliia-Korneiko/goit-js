@@ -30,15 +30,15 @@ class StringBuilder {
   }
 
   append(str) {
-    return (this._value = `${this._value}${str}`);
+    return (this._value = `${this.value}${str}`);
   }
 
   prepend(str) {
-    return (this._value = `${str}${this._value}`);
+    return (this._value = `${str}${this.value}`);
   }
 
   pad(str) {
-    return (this._value = `${str}${this._value}${str}`);
+    return (this._value = `${str}${this.value}${str}`);
   }
 }
 
