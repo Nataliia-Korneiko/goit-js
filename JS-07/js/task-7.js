@@ -8,10 +8,10 @@
 
 // Решение 7
 const newInput = document.getElementById("font-size-control");
-const NewText = document.getElementById("text");
+const newText = document.getElementById("text");
 newInput.value = 14;
 
 newInput.addEventListener(
   "input",
-  () => (NewText.style.fontSize = `${newInput.value}px`)
+  () => (newText.style.fontSize = `${newInput.value}px`)
 );
