@@ -20,3 +20,45 @@
 // <div id="boxes"></div>
 
 // Решение 8
+const newControls = document.getElementById("controls");
+const newInput = newControls.querySelector("input");
+const buttonRender = document.querySelector('[data-action="render"]');
+const buttonDestroy = document.querySelector('[data-action="destroy"]');
+const newBoxes = document.getElementById("boxes");
+// console.log("newBoxes :", newBoxes);
+
+buttonRender.addEventListener("click", () => {
+  const amount = newInput.value;
+  createBoxes(amount);
+});
+let width = 30;
+let height = 30;
+
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i += 1) {
+    let red = Math.round(Math.random() * 255);
+    let green = Math.round(Math.random() * 255);
+    let blue = Math.round(Math.random() * 255);
+
+    const newElement = document.createElement("div");
+    // newElement.style.border = "1px solid red";
+    newElement.style.width = `${width}px`;
+    newElement.style.height = `${height}px`;
+    newElement.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    console.log("newElement :", newElement);
+    newBoxes.append(newElement);
+    width += 10;
+    height += 10;
+  }
+}
+
+buttonDestroy.addEventListener("click", () => {
+  destroyBoxes();
+});
+
+function destroyBoxes() {
+  console.dir(newBoxes);
+  newBoxes.innerHTML = "";
+  width = 30;
+  height = 30;
+}
