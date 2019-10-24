@@ -43,6 +43,7 @@ class StringBuilder {
 }
 
 const builder = new StringBuilder(".");
+console.log("builder", builder);
 
 builder.append("^");
 console.log(builder.value); // '.^'
